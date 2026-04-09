@@ -122,8 +122,8 @@
         >
         <a
           class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.05em] text-[0.75rem] font-bold text-[#1A1C1C] dark:text-[#F9F9F9] hover:text-[#AF101A] dark:hover:text-[#fd867d] transition-colors duration-300"
-          href="#postmortem"
-          >Postmortem</a
+          href="#development-postmortem"
+          >Development Postmortem</a
         >
       </div>
       <div class="w-20 md:block hidden"></div>
@@ -252,12 +252,17 @@
             >
               Intended Users
             </h3>
-            <div class="max-w-4xl mx-auto">
-              <p class="text-on-surface-variant leading-relaxed text-center">
-                Designed for high-frequency collectors, data analysts within the
-                hobby space, and curators who demand a professional-grade
-                interface for managing complex digital assets. It scales from
-                the casual hobbyist to the enterprise-level archivist.
+            <div
+              class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl mx-auto"
+            >
+              <p>
+                Our project's intended users include all kinds of Pokémon fans, from casual 
+                newbies and TCG players to superfans and sellers. It is especially built for 
+                collectors who need a way to easily track their cards in detail, like professional 
+                grades and market values. We also made this for people who want to share their collections 
+                and stay connected to the community at-large with the news feed. The different search and view 
+                options allow TCG players to check specific attacks and abilities while giving 
+                buyers and sellers quick access to the latest market trends.
               </p>
             </div>
           </div>
@@ -364,6 +369,60 @@
               Our Team
             </h3>
             <div class="space-y-12">
+              <!-- Arturo Monjaras Saldana -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Arturo Monjaras Saldana
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      My major role in the project was to support the team in
+                      whatever area was needed, though my biggest individual
+                      contribution was the full implementation of the Market
+                      Trends feature. I also dedicated a lot of time to the
+                      maintenance side by conducting code reviews and
+                      refactoring to keep our codebase clean and organized.
+                      Along with that, I assisted with GitLab issue upkeep and
+                      worked on fixing bugs and identifying code smells to
+                      ensure everything ran smoothly.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Throughout this project, I gained significant experience
+                      working in an Agile environment and learning how to stay
+                      organized using Git and GitLab while multiple people were
+                      writing code at once. A major part of my growth was
+                      learning how to conduct thorough code reviews and identify
+                      code smells, which allowed me to refactor existing logic
+                      to meet higher coding standards. On the technical side,
+                      implementing the Market Trends feature gave me hands-on
+                      experience with database management and fetching data to
+                      match our project’s specific domain. I also improved my
+                      communication skills to ensure tasks were properly planned
+                      and the development process moved forward without
+                      unnecessary dependencies.
+                    </p>
+                  </div>
+                </div>
+              </div>
               <!-- Carsen Cote -->
               <div
                 class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
@@ -462,8 +521,8 @@
                       Java and SQL in much greater depth than I had in previous
                       coursework. At a higher level, I developed the ability to
                       read through large codebases to identify code smells and
-                      determine exactly where specific programming patterns
-                      belong.
+                      determine when and where to use specific programming
+                      patterns we learned in class.
                     </p>
                   </div>
                 </div>
@@ -574,40 +633,6 @@
                   </div>
                 </div>
               </div>
-              <!-- Arturo Monjaras Saldana -->
-              <div
-                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
-              >
-                <h4 class="font-headline text-4xl font-bold mb-8">
-                  Arturo Monjaras Saldana
-                </h4>
-                <div class="flex flex-col gap-3">
-                  <div class="space-y-2">
-                    <p
-                      class="text-xs font-bold uppercase text-primary tracking-widest"
-                    >
-                      Main Contributions
-                    </p>
-                    <p
-                      class="text-base leading-relaxed italic text-on-surface-variant/60"
-                    >
-                      —
-                    </p>
-                  </div>
-                  <div class="space-y-2">
-                    <p
-                      class="text-xs font-bold uppercase text-primary tracking-widest"
-                    >
-                      Technical Skills Developed
-                    </p>
-                    <p
-                      class="text-base leading-relaxed italic text-on-surface-variant/60"
-                    >
-                      —
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -658,7 +683,8 @@
             <p
               class="text-on-surface-variant leading-relaxed italic text-center max-w-3xl mx-auto"
             >
-              TODO: This text would be used to describe the video and its features.
+              TODO: This text would be used to describe the video and its
+              features.
             </p>
           </div>
         </div>
@@ -666,7 +692,7 @@
       <!-- Development Postmortem Section -->
       <section
         class="py-24 px-8 md:px-24 bg-surface-container-low"
-        id="postmortem"
+        id="development-postmortem"
       >
         <div class="max-w-5xl mx-auto space-y-16">
           <div class="text-center">
@@ -715,6 +741,86 @@
                   project. Instead of scrambling to finish features right before
                   the deadline, we were often able to spend the final few days
                   of an iteration focusing on refactoring and reviewing code.
+                </p>
+              </div>
+            </div>
+            <!-- Overall Architecture of the System -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  Overall Architecture of the System
+                </h3>
+              </div>
+              <div
+                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
+              >
+                <p>
+                  As the project progressed, the architecture of the system
+                  improved significantly. Early on we had several design
+                  problems, including layering violations. For example,
+                  persistence related constants sometimes appeared in multiple
+                  layers, and certain logic such as sorting ended up in utility
+                  classes instead of more appropriate parts of the system.
+                </p>
+                <p>
+                  We also initially had some very large classes that handled too
+                  many responsibilities, particularly in some activity and model
+                  classes. These classes were harder to maintain and made
+                  debugging more difficult. Over time we refactored many of
+                  these areas and distributed responsibilities more
+                  appropriately across the system. This helped make the code
+                  easier to understand and maintain.
+                </p>
+              </div>
+            </div>
+            <!-- Time Spent on Various Tasks -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  Time Spent on Various Tasks
+                </h3>
+              </div>
+              <div
+                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
+              >
+                <p>
+                  Another lesson we learned was how much time certain features
+                  require to fully implement. Features that seemed simple at
+                  first often required more work once testing, integration, and
+                  edge cases were considered. Each new feature also increased
+                  the complexity of the application and introduced more
+                  potential for technical debt.
+                </p>
+                <p>
+                  Despite this, implementing a larger set of features made the
+                  project more engaging for our group and kept everyone
+                  motivated to contribute.
+                </p>
+              </div>
+            </div>
+            <!-- Outstanding Bugs or Technical Debt -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  Outstanding Bugs or Technical Debt
+                </h3>
+              </div>
+              <div
+                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
+              >
+                <p>
+                  The main area where technical debt still exists is in the
+                  presentation layer. Because the application contains many
+                  different pages and fragments, there is some duplication in UI
+                  elements such as toolbars and layout structures. Maintaining
+                  consistent layouts across multiple pages proved more difficult
+                  than we expected.
+                </p>
+                <p>
+                  If development continued, one of the next improvements would
+                  likely be refactoring the UI structure so that these elements
+                  could be reused more easily and maintained in a more
+                  centralized way.
                 </p>
               </div>
             </div>
@@ -794,35 +900,6 @@
                 </p>
               </div>
             </div>
-            <!-- Overall Architecture of the System -->
-            <div class="space-y-6">
-              <div class="flex items-center gap-4">
-                <h3 class="font-headline text-3xl font-bold">
-                  Overall Architecture of the System
-                </h3>
-              </div>
-              <div
-                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
-              >
-                <p>
-                  As the project progressed, the architecture of the system
-                  improved significantly. Early on we had several design
-                  problems, including layering violations. For example,
-                  persistence related constants sometimes appeared in multiple
-                  layers, and certain logic such as sorting ended up in utility
-                  classes instead of more appropriate parts of the system.
-                </p>
-                <p>
-                  We also initially had some very large classes that handled too
-                  many responsibilities, particularly in some activity and model
-                  classes. These classes were harder to maintain and made
-                  debugging more difficult. Over time we refactored many of
-                  these areas and distributed responsibilities more
-                  appropriately across the system. This helped make the code
-                  easier to understand and maintain.
-                </p>
-              </div>
-            </div>
             <!-- What We Would Change if Starting Over -->
             <div class="space-y-6">
               <div class="flex items-center gap-4">
@@ -846,57 +923,6 @@
                   beginning might have helped us avoid some of the early design
                   problems and reduced the amount of refactoring we needed
                   later.
-                </p>
-              </div>
-            </div>
-            <!-- Time Spent on Various Tasks -->
-            <div class="space-y-6">
-              <div class="flex items-center gap-4">
-                <h3 class="font-headline text-3xl font-bold">
-                  Time Spent on Various Tasks
-                </h3>
-              </div>
-              <div
-                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
-              >
-                <p>
-                  Another lesson we learned was how much time certain features
-                  require to fully implement. Features that seemed simple at
-                  first often required more work once testing, integration, and
-                  edge cases were considered. Each new feature also increased
-                  the complexity of the application and introduced more
-                  potential for technical debt.
-                </p>
-                <p>
-                  Despite this, implementing a larger set of features made the
-                  project more engaging for our group and kept everyone
-                  motivated to contribute.
-                </p>
-              </div>
-            </div>
-            <!-- Outstanding Bugs or Technical Debt -->
-            <div class="space-y-6">
-              <div class="flex items-center gap-4">
-                <h3 class="font-headline text-3xl font-bold">
-                  Outstanding Bugs or Technical Debt
-                </h3>
-              </div>
-              <div
-                class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl"
-              >
-                <p>
-                  The main area where technical debt still exists is in the
-                  presentation layer. Because the application contains many
-                  different pages and fragments, there is some duplication in UI
-                  elements such as toolbars and layout structures. Maintaining
-                  consistent layouts across multiple pages proved more difficult
-                  than we expected.
-                </p>
-                <p>
-                  If development continued, one of the next improvements would
-                  likely be refactoring the UI structure so that these elements
-                  could be reused more easily and maintained in a more
-                  centralized way.
                 </p>
               </div>
             </div>
