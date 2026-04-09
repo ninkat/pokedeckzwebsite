@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pokedeckz Website</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface-bright': '#f9f9f9',
+              'surface-container': '#eeeeee',
+              tertiary: '#005f7b',
+              'inverse-surface': '#2f3131',
+              'on-surface-variant': '#5b403d',
+              'outline-variant': '#e4beba',
+              'surface-tint': '#ba1a20',
+              'on-primary': '#ffffff',
+              'secondary-container': '#fd867d',
+              'on-tertiary-container': '#e9f7ff',
+              'on-tertiary-fixed': '#001f2a',
+              'on-surface': '#1a1c1c',
+              'secondary-fixed-dim': '#ffb3ac',
+              'tertiary-fixed': '#bee9ff',
+              'secondary-fixed': '#ffdad6',
+              surface: '#f9f9f9',
+              primary: '#af101a',
+              'surface-container-highest': '#e2e2e2',
+              'on-primary-fixed-variant': '#930010',
+              'on-tertiary-fixed-variant': '#004d65',
+              'on-error-container': '#93000a',
+              error: '#ba1a1a',
+              'primary-fixed': '#ffdad6',
+              'surface-container-high': '#e8e8e8',
+              'primary-fixed-dim': '#ffb3ac',
+              background: '#f9f9f9',
+              outline: '#8f6f6c',
+              'on-background': '#1a1c1c',
+              'on-primary-fixed': '#410003',
+              'on-error': '#ffffff',
+              'surface-dim': '#dadada',
+              'on-secondary-container': '#741e1c',
+              'on-secondary-fixed-variant': '#802824',
+              'on-secondary-fixed': '#410003',
+              'on-tertiary': '#ffffff',
+              'surface-variant': '#e2e2e2',
+              secondary: '#9f3f39',
+              'tertiary-container': '#00799c',
+              'on-secondary': '#ffffff',
+              'error-container': '#ffdad6',
+              'on-primary-container': '#fff2f0',
+              'surface-container-lowest': '#ffffff',
+              'primary-container': '#d32f2f',
+              'surface-container-low': '#f3f3f3',
+              'tertiary-fixed-dim': '#7bd1f8',
+              'inverse-primary': '#ffb3ac',
+              'inverse-on-surface': '#f0f1f1',
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.25rem',
+              xl: '0.5rem',
+              full: '0.75rem',
+            },
+            fontFamily: {
+              headline: ['Plus Jakarta Sans'],
+              body: ['Inter'],
+              label: ['Inter'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- Top Navigation Bar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#F9F9F9]/80 dark:bg-[#1A1C1C]/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full mx-auto border-b border-surface-container"
+    >
+      <div
+        class="text-xl font-black tracking-tighter text-[#1A1C1C] dark:text-[#F9F9F9]"
+      >
+        Pokedeckz
+      </div>
+      <div class="hidden md:flex gap-8 items-center">
+        <a
+          class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.05em] text-[0.75rem] font-bold text-[#1A1C1C] dark:text-[#F9F9F9] hover:text-[#AF101A] dark:hover:text-[#fd867d] transition-colors duration-300"
+          href="#project-overview"
+          >Project Overview</a
+        >
+        <a
+          class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.05em] text-[0.75rem] font-bold text-[#1A1C1C] dark:text-[#F9F9F9] hover:text-[#AF101A] dark:hover:text-[#fd867d] transition-colors duration-300"
+          href="#product-demonstration"
+          >Product Demonstration</a
+        >
+        <a
+          class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.05em] text-[0.75rem] font-bold text-[#1A1C1C] dark:text-[#F9F9F9] hover:text-[#AF101A] dark:hover:text-[#fd867d] transition-colors duration-300"
+          href="#postmortem"
+          >Postmortem</a
+        >
+      </div>
+      <div class="w-20 md:block hidden"></div>
+      <!-- Spacer for removed button to help keep nav centered -->
+    </nav>
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        class="min-h-[600px] flex flex-col justify-center items-center px-8 md:px-24 bg-surface text-center"
+      >
+        <div class="max-w-4xl">
+          <span
+            class="font-label text-primary font-bold uppercase tracking-widest text-[0.75rem] mb-4 block"
+            >COMP 3350 A01 Group 11</span
+          >
+          <h1
+            class="font-headline text-[4rem] md:text-[6rem] font-extrabold leading-[0.9] tracking-tighter text-on-surface mb-8"
+          >
+            Pokedeckz
+          </h1>
+          <p
+            class="text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed"
+          >
+            Pokedeckz is an application for Pokémon Trading Card Game collectors
+            to track their individual collections and interact with other
+            hobbyists.
+          </p>
+        </div>
+      </section>
+      <!-- Project Overview Section -->
+      <section
+        class="py-24 px-8 md:px-24 bg-surface-container-low"
+        id="project-overview"
+      >
+        <div class="max-w-5xl mx-auto space-y-24">
+          <div class="text-center">
+            <h2 class="font-headline text-5xl md:text-6xl font-bold">
+              Project Overview
+            </h2>
+            <div class="h-1 w-20 bg-primary mx-auto mt-6"></div>
+          </div>
+          <!-- Vision Statement (Stacked) -->
+          <div class="space-y-6">
+            <h3
+              class="font-label text-sm md:text-base font-bold uppercase tracking-widest text-primary text-center"
+            >
+              Vision Statement
+            </h3>
+            <div
+              class="space-y-4 text-on-surface-variant leading-relaxed max-w-4xl mx-auto"
+            >
+              <p>
+                Pokedeckz is a dedicated digital space for fans of the Pokémon
+                Trading Card Game (TCG), designed to facilitate personal
+                collection organization and global community engagement. The
+                platform serves as a central hub where collectors can manage
+                their inventories while connecting with a broader network of
+                collectors and enthusiasts to discuss the hobby. By providing a
+                unified platform for both management and social discovery,
+                Pokedeckz allows fans to transform their physical binders and
+                passion into a fun, shared digital experience.
+              </p>
+              <p>
+                The current iteration of Pokedeckz primarily functions as a
+                detailed collection manager. Collectors can document their cards
+                in great detail, recording professional card quality grades,
+                market valuations, and personal notes for every item in their
+                possession. Rather than laboring over manual data entry,
+                hobbyists navigate a comprehensive digital catalog to update
+                their status with ease. Pokedeckz also provides immediate access
+                to vital card intelligence, from rarity and illustrator credits
+                to competitive gameplay data like stage weaknesses and attack
+                sets.
+              </p>
+              <p>
+                Extending beyond the individual, users are currently able to
+                browse the libraries of fellow collectors and gauge their
+                standing on community leaderboards, fostering a sense of
+                friendly competition and discovery. This serves as the start of
+                our application's social capabilities.
+              </p>
+              <p>
+                In the future, Pokedeckz will move towards a fully realized
+                social ecosystem. Future iterations will introduce direct and
+                group messaging, allowing hobbyists to chat in real-time to
+                discuss their collections and strategies. The platform would
+                also facilitate a peer-to-peer trading environment and an
+                auction system, removing the logistical hurdles often associated
+                with the exchanging of cards, while maintaining flexibility.
+                These planned features will leverage the application's
+                sophisticated tracking capabilities into an active, friendly
+                marketplace for the global Pokémon community.
+              </p>
+              <p>
+                This platform represents a significant improvement over existing
+                practices for participating in the hobby, which often rely on
+                tracking collections on paper and in-person interactions at
+                conventions. Centralizing the collection process saves
+                significantly on travel costs and reduces the environmental
+                impact associated with traveling to physical events. Pokedeckz
+                also makes it much easier to track trades and card history,
+                replacing the often unreliable, decentralized, individual
+                tracking found at conventions. By providing a unified platform,
+                the platform helps users establish trust through verified
+                profiles and can help ensure the legitimacy of the cards being
+                discussed and traded.
+              </p>
+              <p>
+                The project's success will be determined by examining the
+                following three criteria. First, the platform will be evaluated
+                by asking users to compare their experience with the platform
+                against the traditional process of attending physical Pokémon
+                trading card conventions. Second, the project must demonstrate
+                statistically significant savings in terms of both time and
+                money for collectors. Third, engagement with the hobby, over a
+                year, will be compared between users of Pokedeckz and non-users.
+                The project will be considered successful if all three criteria
+                show an improvement over existing practices.
+              </p>
+            </div>
+          </div>
+          <!-- Intended Users (Stacked) -->
+          <div class="space-y-6">
+            <h3
+              class="font-label text-sm md:text-base font-bold uppercase tracking-widest text-primary text-center"
+            >
+              Intended Users
+            </h3>
+            <div class="max-w-4xl mx-auto">
+              <p class="text-on-surface-variant leading-relaxed text-center">
+                Designed for high-frequency collectors, data analysts within the
+                hobby space, and curators who demand a professional-grade
+                interface for managing complex digital assets. It scales from
+                the casual hobbyist to the enterprise-level archivist.
+              </p>
+            </div>
+          </div>
+          <!-- Major Features (Stacked) -->
+          <div class="space-y-8">
+            <h3
+              class="font-label text-sm md:text-base font-bold uppercase tracking-widest text-primary text-center"
+            >
+              Major Features
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Feature 1 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">👤</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Register for an account
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Sign in to track your personal inventory.
+                </p>
+              </div>
+              <!-- Feature 2 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">🃏</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Card Explorer
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Browse a database of Pokémon cards with high-quality images.
+                </p>
+              </div>
+              <!-- Feature 3 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">🔍</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Advanced Search
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Find cards by name or filter by their original sets.
+                </p>
+              </div>
+              <!-- Feature 4 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">📂</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  My Collection
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Track your personal inventory, add new finds, and manage your
+                  deck.
+                </p>
+              </div>
+              <!-- Feature 5 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">📰</div>
+                <h4 class="font-headline text-xl font-bold mb-2">News Feed</h4>
+                <p class="text-sm text-on-surface-variant">
+                  Seamless integration with a news service for the latest TCG
+                  updates.
+                </p>
+              </div>
+              <!-- Feature 6 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors"
+              >
+                <div class="text-4xl mb-4">📈</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Market Trends
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Interactive charts showing price history and market data.
+                </p>
+              </div>
+              <!-- Feature 7 -->
+              <div
+                class="bg-surface-container-lowest p-8 border border-surface-container hover:border-primary transition-colors md:col-span-2 lg:col-span-1"
+              >
+                <div class="text-4xl mb-4">🏆</div>
+                <h4 class="font-headline text-xl font-bold mb-2">
+                  Card Leaderboards
+                </h4>
+                <p class="text-sm text-on-surface-variant">
+                  Check out a leaderboard of cards based on the progress of
+                  other users.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Team Section -->
+          <div class="space-y-12">
+            <h3
+              class="font-label text-sm md:text-base font-bold uppercase tracking-widest text-primary text-center"
+            >
+              Our Team
+            </h3>
+            <div class="space-y-12">
+              <!-- Member 1 -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Elena Vance
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Lead UI Architecture and Tonal System Development.
+                      Spearheaded the 'No-Line' rule across the entire
+                      application shell.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Advanced Tailwind Composition, Contextual State Logic, and
+                      Accessibility-first Design Patterns.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Member 2 -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Marcus Thorne
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Engineered the search indexing engine and real-time data
+                      sync protocols for the collection backend.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Vector database management, high-concurrency Node.js
+                      architecture, and REST API optimization.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Member 3 -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Sarah Chen
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Designed the core user flow for the 'Deck' component and
+                      established the data visualization standards.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Data Viz with D3.js, interactive SVG animation, and
+                      advanced React component lifecycle management.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Member 4 -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Julian Rossi
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Oversaw the integration of cloud storage solutions and the
+                      implementation of user authentication protocols.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      OAuth2 implementation, AWS S3 bucket optimization, and
+                      cybersecurity best practices for archival data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Member 5 -->
+              <div
+                class="p-12 bg-surface-container-lowest border border-surface-container hover:border-primary/50 transition-colors"
+              >
+                <h4 class="font-headline text-4xl font-bold mb-8">
+                  Aria Novak
+                </h4>
+                <div class="flex flex-col gap-3">
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Main Contributions
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Lead technical writer and documentation engineer. Managed
+                      the 'Postmortem' analysis and quality assurance testing.
+                    </p>
+                  </div>
+                  <div class="space-y-2">
+                    <p
+                      class="text-xs font-bold uppercase text-primary tracking-widest"
+                    >
+                      Technical Skills Developed
+                    </p>
+                    <p
+                      class="text-base leading-relaxed text-on-surface-variant"
+                    >
+                      Automated testing with Cypress, technical documentation
+                      workflows, and user acceptance testing (UAT).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Product Demonstration Section -->
+      <section
+        class="py-24 px-8 md:px-24 bg-surface"
+        id="product-demonstration"
+      >
+        <div class="max-w-5xl mx-auto space-y-12">
+          <div class="text-center">
+            <h2 class="font-headline text-5xl md:text-6xl font-bold">
+              Product Demonstration
+            </h2>
+            <div class="h-1 w-20 bg-primary mx-auto mt-6"></div>
+          </div>
+          <div class="space-y-8">
+            <h3
+              class="font-label text-sm md:text-base font-bold uppercase tracking-widest text-primary text-center"
+            >
+              Screen Recording of Major Features
+            </h3>
+            <div
+              class="aspect-video bg-surface-container-high overflow-hidden flex items-center justify-center relative group"
+            >
+              <img
+                class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700"
+                data-alt="Modern minimalist workstation"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0YmMEXR2MHVcx7OtQk815nu5YqLUWjEkg4PazPvbPh5vyIx4wK1nykUaeN77yqMxuoF_ukTHoItsL4dAtbd0DS4DHEgENem-IGrgFJvaq2jnIrIlLTf7XHKewWx8-kMi7KlfR8HKx_UA_NGpdX8pWsLxvf97wndxuP0ki5U-kKipSpdJkUNLNW01DPhSms2GZw3SQ2cq8S2793rYNTTYTjH8V62972nEMUMRxxhZSRL0TTBiJPZ9OtnsTew_dMFk3xe-0EOmEl2E"
+              />
+              <div class="relative z-10 flex flex-col items-center">
+                <button
+                  class="w-20 h-20 bg-primary text-white flex items-center justify-center rounded-full shadow-2xl transition-transform hover:scale-110 active:scale-95"
+                >
+                  <span
+                    class="material-symbols-outlined text-4xl"
+                    data-icon="play_arrow"
+                    >play_arrow</span
+                  >
+                </button>
+                <p
+                  class="mt-4 font-label text-xs uppercase tracking-widest font-bold"
+                >
+                  Click to Play Demo
+                </p>
+              </div>
+            </div>
+            <p
+              class="text-on-surface-variant leading-relaxed italic text-center max-w-3xl mx-auto"
+            >
+              This recording highlights the seamless transition between the
+              global dashboard and the detailed item inspection views,
+              showcasing our signature glassmorphism effects and tonal layering
+              system in action.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Development Postmortem Section -->
+      <section
+        class="py-24 px-8 md:px-24 bg-surface-container-low"
+        id="postmortem"
+      >
+        <div class="max-w-5xl mx-auto space-y-16">
+          <div class="text-center">
+            <h2 class="font-headline text-5xl md:text-6xl font-bold">
+              Development Postmortem
+            </h2>
+            <div class="h-1 w-20 bg-primary mx-auto mt-6"></div>
+          </div>
+          <div class="space-y-16">
+            <!-- Topic 1 -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  The Challenge of Tonal Depth
+                </h3>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed max-w-4xl">
+                Our primary obstacle was maintaining a strict "no-border" policy
+                while ensuring the interface didn't feel flat or unorganized. We
+                overcame this by rigorously testing surface-container tokens
+                against one another. The realization that a 4% shift in grey
+                tone could provide more clarity than a 1px solid black line was
+                a turning point in our design philosophy.
+              </p>
+            </div>
+            <!-- Topic 2 -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  Architectural Scalability
+                </h3>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed max-w-4xl">
+                Building a system that looks good with ten items but remains
+                performant with ten thousand required a rethink of our DOM
+                structure. We moved toward a highly componentized approach where
+                the 'Deck' card only renders its heavy assets when in the active
+                viewport. This increased our initial load time efficiency by
+                nearly 40%.
+              </p>
+            </div>
+            <!-- Topic 3 -->
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <h3 class="font-headline text-3xl font-bold">
+                  Collaborative Synthesis
+                </h3>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed max-w-4xl">
+                The final stage of development involved harmonizing the
+                editorial vision with technical constraints. By utilizing a
+                Shared Components JSON as our "Source of Truth," we ensured that
+                designers and developers were speaking the same language. This
+                eliminated the typical hand-off friction and resulted in a
+                product that felt cohesive from the first byte to the final
+                pixel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-12 px-8 bg-[#F3F3F3] dark:bg-[#1A1C1C] flex flex-col md:flex-row justify-center items-center gap-4 border-t border-surface-container"
+    >
+      <p
+        class="font-['Inter'] text-[0.75rem] tracking-wider uppercase text-[#1A1C1C] dark:text-[#F9F9F9] opacity-50"
+      >
+        2026 Pokedeckz.
+      </p>
+    </footer>
+  </body>
+</html>
